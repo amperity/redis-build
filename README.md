@@ -12,5 +12,4 @@ Repo with tools and setup for building custom debs to distribute redis
 ```
 $ cd stage
 $ ./build.sh
-$ aws cp redis-server-4.0-rc3_amd64.deb s3://amperity-binaries-archive/
 ```
