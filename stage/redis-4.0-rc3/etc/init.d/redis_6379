@@ -6,6 +6,8 @@ CLIEXEC=/usr/bin/redis-cli
 PIDFILE=/var/run/redis_6379.pid
 CONF="/etc/redis/redis.conf"
 REDISPORT="6379"
+NAME=redis-server
+DESC=redis-server
 ###############
 # SysV Init Information
 # chkconfig: - 58 74
@@ -27,7 +29,7 @@ case "$1" in
     start)
 	echo -n "Starting $DESC: "
 	touch $PIDFILE
-	if start-stop-daemon --start --quiet --umask 007 --pidfile $PIDFILE --background --exec $DAEMON -- $DAEMON_ARGS
+	if start-stop-daemon --start --quiet --umask 007 --pidfile $PIDFILE --background --exec $EXEC -- $CONF
 	then
 		echo "$NAME."
 	else
